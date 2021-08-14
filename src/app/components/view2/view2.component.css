@@ -1,0 +1,118 @@
+.view{
+    margin-left: 90px;
+    width:85%;
+    height:400px;
+    margin-right: 100px;
+    border-radius: 21px;
+    padding:10px;
+    margin-top:20px;
+}
+.view2{
+    background:pink;
+}
+.above{
+    position:absolute;
+    left: 68%;
+    top:20%;
+    font-size: 60px;
+    color:white;
+}
+.above_nation{
+    position:absolute;
+    left: 74%;
+    top:46%;
+    font-size: 60px;
+    color:white;
+
+}
+/* Design reference: https://codepen.io/marcobiedermann/pen/DhrBq */
+
+/* basic */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	font: 16px/1.2 "Roboto", sans-serif;
+	color: #333;
+	background-color: steelblue;
+}
+
+/* container */
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+/* app_calendar */
+.app_calendar {
+	width: 200px;
+	height: 200px;
+	border-radius: 30px;
+	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+	overflow: hidden;
+}
+.app_calendar .weekday,
+.app_calendar .day {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.app_calendar .weekday {
+	position: relative;
+	height: 56px;
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #d9383c;
+}
+.app_calendar .weekday:before,
+.app_calendar .weekday:after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: white;
+	position: absolute;
+	top: calc(50% - 5px);
+	box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+		rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.app_calendar .weekday:before {
+	left: 30px;
+}
+.app_calendar .weekday:after {
+	right: 30px;
+}
+.app_calendar .day {
+	height: 144px;
+	color: black;
+	font-size: 100px;
+	font-weight: bold;
+	background-color: snow;
+}
+/* app_name */
+.app_name {
+	color: black;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+.postion{
+    position:absolute;
+    left: 58%;
+    top:40%;
+    font-size: 60px;
+    color:white;
+    
+}

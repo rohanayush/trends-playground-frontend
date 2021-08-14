@@ -1,0 +1,47 @@
+<!-- <input type='text' #q><button class="btn btn-primary" (click)="trendingSearches(q.value)">Get</button> -->
+<!-- <form><mat-form-field class="example-full-width">
+  <mat-label>Number</mat-label>
+  <input type="text" #q
+         placeholder="Pick one"
+         aria-label="Country"
+         matInput
+         [formControl]="myNation"
+         [matAutocomplete]="auto"
+         (keyup)="getCountry(q.value)">
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredNations | async" [value]="option">
+      {{option}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<button (click)="trendingSearches(q.value)">Get</button></form> -->
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3 tab" [class.trends]="trend_view" (click)="trendBool()">Top trends</div>
+  <div class="col-md-3 tab" [class.analysis]="analysis_view" (click)="analysisBool()">Analysis</div>
+</div>
+<div *ngIf="trend_view">
+  <app-view4 class="animate__animated animate__FadeIn"></app-view4>
+</div>
+<div *ngIf="analysis_view">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Know trend for</mat-label>
+      <input type="text" #query placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="auto" (keyup)="sendValue(query.value)">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <button class="btn btn-danger" (click)="show(query.value)">Visualise</button>
+  </form>
+  <div *ngIf="dict_bool">
+    <ag-charts-angular
+    style="position: relative;width: 800px;height:400px;"
+    [options]="options">
+</ag-charts-angular>
+
+  </div>
+</div>

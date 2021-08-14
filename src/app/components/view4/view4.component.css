@@ -1,0 +1,98 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 80%;
+    margin-top:20px;
+    margin-left:80px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  li{
+    list-style: none;
+    box-shadow: 1px 1px 1px 1px pink;
+    border-radius: 11px;
+    display: flex;
+    margin:20px;
+    padding:20px;
+  }
+  .mod_view{
+    z-index: 1;
+    position:fixed;
+    left:80%;
+    top:12%;
+    background:green;
+    color:white;
+    padding:20px;
+    border-radius:21px;
+    cursor: pointer;
+
+  }
+.hawa-hawai{
+  position:fixed;
+  left:15%;
+  background:pink;
+  left:auto;
+  top:100%;
+  z-index:99;
+  /* box-shadow: 2px 2px 2px 2px steelblue; */
+  background:white;
+  padding:30px;
+  border-radius:11px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  width:100%;
+
+
+}
+.news-box{
+  background:blue;
+  opacity: 0.4;
+  border-radius:17px;
+  padding: 10px;
+  margin-left: 140px;
+  margin-top: 20px;
+  box-shadow: 2px 2px 2px 2px red;
+  background:white;
+  color:black;
+  grid-column: span 5;
+  width:100%;
+  padding-left:10px;
+  grid-gap:10px;
+  z-index:10;
+}
+.pic{
+  padding:10px;
+  margin:10px;
+}
+.dat{
+  margin-left:10px;
+  margin-bottom:10px;
+  padding:10px;
+}
+.title{
+  font-size:30px;
+  padding:10px;
+  margin:5px;
+}
+.desc{
+  padding:10px;
+  margin:5px;
+  font-size:16px;
+}
+a{
+  text-decoration: none;
+
+}
+.results{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.inner{
+  grid-column: span 5;
+}
+.material-icons{
+  cursor:copy;
+}
