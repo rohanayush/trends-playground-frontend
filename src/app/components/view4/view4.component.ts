@@ -13,7 +13,7 @@ import { count, map, startWith } from 'rxjs/operators';
 })
 export class View4Component implements OnInit {
 
-  url: string = "https://playground-trends-backend.herokuapp.com/"
+  url: string = "https://playground-trends-backend.herokuapp.com"
 
   constructor(private http: HttpClient,private sanitizer:DomSanitizer) {
     for (var i in this.country_list) {
