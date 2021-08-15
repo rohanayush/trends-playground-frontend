@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
+https://trends-backend.herokuapp.com/import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser'
 import { HttpClient } from '@angular/common/http';
 
@@ -13,7 +13,7 @@ import { count, map, startWith } from 'rxjs/operators';
 })
 export class View4Component implements OnInit {
 
-  url: string = "http://localhost:5000"
+  url: string = "https://playground-trends-backend.herokuapp.com"
 
   constructor(private http: HttpClient,private sanitizer:DomSanitizer) {
     for (var i in this.country_list) {
