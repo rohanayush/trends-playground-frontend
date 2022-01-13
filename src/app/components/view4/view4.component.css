@@ -67,17 +67,32 @@
 }
 .news-box1{
   position: fixed;
-  left:10%;
-  top:20%;
+  left:4%;
+  top:30%;
+  /* border:1px solid brown; */
   display: block;
   z-index:1001;
-  background-color: white;
+  background-color:white;
   box-shadow: 2px 2px 2px 2px silver;
-  width:70%;
+  width:80%;
   word-wrap: break-word;
   padding:2rem;
   overflow: auto;
-  height: 300px;
+  height: 60vh;
+  animation:  box1 1.5s ease;
+  /* color:white; */
+}
+@keyframes box1 {
+  0%{
+    /* transform: rotate(-8deg); */
+    height:10vh;
+    width:10%;
+  }
+  100%{
+    /* transform: rotate(8deg); */
+
+  }
+  
 }
 .pic{
   padding:10px;

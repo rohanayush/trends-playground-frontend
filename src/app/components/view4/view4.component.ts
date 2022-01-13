@@ -59,15 +59,7 @@ export class View4Component implements OnInit {
         console.log("error in service",err);
       }
     )
-    // this.http.post<any[]>(this.url + "/trending", data).subscribe(
-    //   (data: any) => {
-    //     console.log(data);
-    //     this.setData(data);        
-    //   },
-    //   (err: any) => {
-    //     console.log("error in getting trending", err);
-    //     window.alert("There is no trends for this country, please try with some other country \n Hint : Possibility is you will find data for popular countries and where google operates ");
-    //   }
+   
 
     
 
@@ -86,7 +78,9 @@ export class View4Component implements OnInit {
     console.log("Length",this.l);  
   }
   curious_string:string="";
+  loader:boolean=false;
   getSearch(query:any){
+    this.loader=true;
     this.ress=[]
     this.articles=[];
     console.log("You are curious friend!",query);
@@ -101,12 +95,16 @@ export class View4Component implements OnInit {
     console.log("Data entries!",data.entries);
 
         this.setDataNews(data.entries);
-    this.curious=true;
+        this.loader=false;
+        this.curious=true;
+
 
       },
 
       (err:any)=>{
         console.log("error in getting news",err);
+        this.loader=false;
+
 
       }
     )
@@ -139,7 +137,8 @@ export class View4Component implements OnInit {
     console.log("filtered articles arr",this.ress);
   }
   else if(data.length ==0){
-    window.alert("Oops we do not have any info related to it. Please try to copy and paste in Analysis part to have more insight ");
+    this.ress=[];
+    // window.alert("Oops we do not have any info related to it. Please try to copy and paste in Analysis part to have more insight ");
 
   }
 

@@ -23,7 +23,7 @@
           [cdkCopyToClipboard]="trends_res[(i)]">
           content_copy
         </span>
-        <span style="font-size: large;" (click)="getSearch(trends_res[(i)])"> 🕵️</span>
+        <span style="font-size: large;cursor: pointer;margin-left:10px" (click)="getSearch(trends_res[(i)])"> 🕵️</span>
       
       </li>
     </ul>
@@ -34,8 +34,11 @@
   "{{copy_value}}" has been copied ! <span
     style="border-radius:50px;padding:5px;margin-left:10px;margin-bottom:20px;border:1px solid white;color:white">X</span>
 
-</div>
 
+  </div>
+  <div class="loading1" *ngIf="loader">
+
+  </div>
 <div *ngIf="curious" class="hawa-hawai">
 
   <!-- <button class="btn btn-warning" (click)="close()">Close air view</button>
@@ -55,7 +58,7 @@
     - {{curious_string}}</div>
   <br>
 
-
+<div *ngIf="ress.length >0">
   <div class="news-box1" *ngFor="let j of ress; let i=index">
     <div style="display: flex;margin-top:5px;padding-top:15px" *ngFor="let i of j">
       <span> {{i.title}}</span>
@@ -65,3 +68,13 @@
     <button class="btn btn-danger" style="position:absolute;right:3%;top:1%" (click)="close()">CLose</button>
 
   </div>
+</div>
+<div *ngIf="ress.length === 0">
+  <div class="news-box1" >
+    <div style="display: flex;margin-top:5px;padding-top:15px" >
+      Oops there is no info ! Please copy the text to search for or know insights in Analysis tab
+    </div>
+    <button class="btn btn-danger" style="position:absolute;right:3%;top:1%" (click)="close()">CLose</button>
+
+  </div>
+</div>
