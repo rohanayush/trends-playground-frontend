@@ -1,13 +1,12 @@
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 80%;
-    margin-top:20px;
-    margin-left:80px;
+   
+    max-width: 80%;
+    margin:0 auto;
+    margin-top: 30px;
   }
   
   .example-full-width {
-    width: 100%;
+    width: 80%;
   }
   li{
     list-style: none;
@@ -15,13 +14,14 @@
     border-radius: 11px;
     display: flex;
     margin:20px;
-    padding:20px;
+    padding:1rem;
+    /* overflow: auto; */
   }
   .mod_view{
     z-index: 1;
     position:fixed;
-    left:80%;
-    top:12%;
+    left:10%;
+    top:80%;
     background:green;
     color:white;
     padding:20px;
@@ -48,20 +48,36 @@
 
 }
 .news-box{
+  position: fixed;
+  left:10%;
+  top:20%;
   background:blue;
   opacity: 0.4;
   border-radius:17px;
   padding: 10px;
-  margin-left: 140px;
-  margin-top: 20px;
+    width:60%;
   box-shadow: 2px 2px 2px 2px red;
   background:white;
   color:black;
-  grid-column: span 5;
+  /* grid-column: span 5; */
   width:100%;
   padding-left:10px;
   grid-gap:10px;
-  z-index:10;
+  z-index:101;
+}
+.news-box1{
+  position: fixed;
+  left:10%;
+  top:20%;
+  display: block;
+  z-index:1001;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px silver;
+  width:70%;
+  word-wrap: break-word;
+  padding:2rem;
+  overflow: auto;
+  height: 300px;
 }
 .pic{
   padding:10px;
@@ -86,13 +102,51 @@ a{
   text-decoration: none;
 
 }
-.results{
+/* .results{
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
+} */
 .inner{
-  grid-column: span 5;
+ display: grid;
+ grid-template-columns: auto;
+}
+.grids{
+  grid-gap: 5px;
+  /* grid-column: 1/; */
 }
 .material-icons{
   cursor:copy;
+}
+.loading{
+  position: relative;
+  /* left:45%; */
+  margin:0 auto;
+  margin-top:30px;
+  /* top:55%; */
+  width: 100px;
+  height:100px;
+  border-radius: 11px;
+  /* box-shadow: 2px 2px 2px 2px aqua; */
+  background-color: brown;
+  animation: load 2s ease 0s infinite alternate none;
+}
+@keyframes load {
+  10%{
+    background-color: aqua;
+    transform: scale3d(105%);
+  }
+  40%{
+    background-color: rgb(33, 116, 141);
+    transform: scale3d(105%);
+  } 60%{
+    background-color: rgb(112, 47, 138);
+    transform: scale3d(105%);
+  } 80%{
+    background-color: rgb(190, 29, 177);
+    transform: scale3d(105%);
+  } 100%{
+    background-color: aqua;
+    transform: scale3d(105%);
+  }
+  
 }

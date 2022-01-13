@@ -9,6 +9,9 @@
 }
 .view2{
     background:pink;
+	position: relative;
+    max-width:60%;
+	left:20%;
 }
 .above{
     position:absolute;
@@ -50,11 +53,14 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 1;
+	min-width: 375px;
+	max-width: 60%;
 }
 
 /* app_calendar */
 .app_calendar {
-	width: 200px;
+	position: relative;
+	max-width: 60%;
 	height: 200px;
 	border-radius: 30px;
 	box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -65,10 +71,12 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	max-width:60%;
 }
 .app_calendar .weekday {
 	position: relative;
 	height: 56px;
+	max-width: 60%;
 	color: white;
 	font-size: 24px;
 	font-weight: bold;

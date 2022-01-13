@@ -69,7 +69,7 @@ export class View3Component implements OnInit {
     this.analysis_view = true;
   }
 
-  url: string = "http://localhost:5000"
+  url: string = "https://playground-trends-backend.herokuapp.com"
 
 
   myControl = new FormControl();
@@ -129,6 +129,7 @@ export class View3Component implements OnInit {
       },
       (err) => {
         console.log("Error in fetching trends", err);
+        window.alert("Oops we do not have any info related to it. Please try to copy and paste in Analysis part to have more insight ");
       }
 
     )
@@ -155,7 +156,7 @@ export class View3Component implements OnInit {
       console.log(this.country);
       for (var i=0; i< Object.keys(this.result).length;i++){
         console.log("country",this.country[i])
-        console.log("Value",this.value[i])
+        console.log("Value",this.value[i]) 
 
         var feed={"country":this.country[i], "count":this.value[i]};
         this.dict.push(feed);

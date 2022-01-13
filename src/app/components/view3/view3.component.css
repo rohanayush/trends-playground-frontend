@@ -28,6 +28,7 @@
   }
   .tab{
     display: inline-block;
+    word-wrap: break-word;
     margin-top:20px;
     height:60px;
     padding:20px;
@@ -39,4 +40,9 @@
     width:100%;
 
 
+  }
+  .row{
+    position: relative;
+    width:80%;
+    margin:0 auto;
   }

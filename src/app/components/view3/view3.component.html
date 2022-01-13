@@ -15,15 +15,20 @@
   </mat-autocomplete>
 </mat-form-field>
 <button (click)="trendingSearches(q.value)">Get</button></form> -->
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-3 tab" [class.trends]="trend_view" (click)="trendBool()">Top trends</div>
-  <div class="col-md-3 tab" [class.analysis]="analysis_view" (click)="analysisBool()">Analysis</div>
+<div class="row animate__animated animate__FadeIn">
+  <div class="col-md-3 col-sm-3 col-xs-3 col-lg-2"></div>
+  <div class="col-md-3 col-md-3 col-sm-11 col-xs-12 col-lg-4 tab" [class.trends]="trend_view" (click)="trendBool()">Top
+    trends</div>
+  <div class="col-md-3 col-md-3 col-sm-11 col-xs-12 col-lg-4 tab" [class.analysis]="analysis_view"
+    (click)="analysisBool()">Analysis</div>
 </div>
 <div *ngIf="trend_view">
   <app-view4 class="animate__animated animate__FadeIn"></app-view4>
 </div>
-<div *ngIf="analysis_view">
+
+
+<!-- dynamic suggestion form input using angular material -->
+<div *ngIf="analysis_view" class="animate__animated animate__FadeIn">
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Know trend for</mat-label>
@@ -37,11 +42,16 @@
     </mat-form-field>
     <button class="btn btn-danger" (click)="show(query.value)">Visualise</button>
   </form>
+  
+  <!-- Line Chart Code  -->
   <div *ngIf="dict_bool">
-    <ag-charts-angular
-    style="position: relative;width: 800px;height:400px;"
-    [options]="options">
-</ag-charts-angular>
+    <ag-charts-angular style="position: relative;width: 1000px;height:400px;" [options]="options">
+    </ag-charts-angular>
 
   </div>
 </div>
+<!-- <div style="position:fixed;z-index:500;background:white;padding:1rem;top:30%;left:10%">
+<a href="https://www.dnaindia.com/india/report-national-youth-day-2021-yuva-diwas-swami-vivekananda-s-famous-speech-in-chicago-that-changed-world-s-outlook-towards-india-2867442"
+    target="_blank">National Youth Day: Swami Vivekananda's famous speech in Chicago that changed world's outlook
+    towards India</a>&nbsp;&nbsp;<font color="#6f6f6f">DNA India</font>
+  </div> -->
