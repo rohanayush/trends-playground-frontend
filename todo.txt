@@ -1,0 +1,1 @@
+keep a x to close input and x to clean all input(ie inside input)

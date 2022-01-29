@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { setClassMetadata } from '@angular/core/src/r3_symbols';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { count, map, startWith } from 'rxjs/operators';
 import * as agCharts from 'ag-charts-community';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 // import { MatFormField } from '@angular/material/form-field';
 export interface graphdata{
   country:string;
@@ -19,6 +20,11 @@ export interface graphdata{
 export class View3Component implements OnInit {
 
   public options: any;
+  @HostListener('window:beforeunload',['$event'])
+  handleClose($event: { returnValue: boolean; }){
+    $event.returnValue=true;
+    localStorage.clear();
+  }
 
     data = [
         {
@@ -38,8 +44,9 @@ export class View3Component implements OnInit {
             spending: 700,
         },
     ];
-
+options1:any;
   getdata(){
+    // console.lo
     this.options = {
       data: this.dictt,
       series: [{
@@ -47,10 +54,41 @@ export class View3Component implements OnInit {
           yKey: 'count',
       }],
   };
+ 
+  this.options1 = {
+    data: this.dictt,
+    series: [{
+      type:"column",
+
+        xKey:'country',
+        yKeys: ['count'],
+        label:{
+          formatter:function (params: { value: number | undefined; }){
+             return params.value === undefined ? '': params.value.toFixed(0);
+          },
+         
+          
+        },
+        formatter:(params: any) =>({
+          fill : this.colorThat(params),
+      }),
+      highlightStyle:{
+        fill:"#000000",
+        stroke:"#000000"
+      }
+
+    }],
+};
+  }
+
+  colorThat(params: any) {
+    
   }
   constructor(private http: HttpClient) {
     console.log("type of data",typeof(this.data))
     console.log("Inside constructor ",this.dictt)
+    // alert(screen.width+" "+screen.height)
+
     
   }
   trends: any;
@@ -109,10 +147,7 @@ export class View3Component implements OnInit {
 
   }
   ngOnInit() {
-    // this.filteredOptions = this.myControl.valueChanges.pipe(
-    //   startWith(''),
-    //   map(value => this._filter(value))
-    // );
+  
   }
   final_query:string="";
   dictt?:any[]=[]
@@ -121,15 +156,16 @@ export class View3Component implements OnInit {
     console.log("supposed to be query data", dta)
     this.dict=[];
     this.dict_bool=false;
+    this.mobile = false;
     this.http.post<any[]>(this.url + "/data", dta).subscribe(
       (data: any) => {
         console.log(data);
         this.setFinal(data,dta);
+
         
       },
       (err) => {
         console.log("Error in fetching trends", err);
-        window.alert("Oops we do not have any info related to it. Please try to copy and paste in Analysis part to have more insight ");
       }
 
     )
@@ -145,6 +181,7 @@ export class View3Component implements OnInit {
   dict:any[]=[];
   value:string[]=[];
   country:string[]=[];
+  mobile:boolean=false;
   forGraph(dta:any){
       //A
       this.result=this.result[dta];
@@ -171,8 +208,18 @@ export class View3Component implements OnInit {
       this.dictt=this.dictt.splice(0,11);
       console.log("after sorting")
       console.log(this.dictt);
+   
       this.getdata();
+      if(screen.width > 1316){
       this.dict_bool=true;
+      this.mobile=false;
+
+    }
+    else if(screen.width < 1316){
+      this.mobile=true;
+      this.dict_bool=false;
+
+    }
 
 
   }
@@ -182,3 +229,5 @@ export class View3Component implements OnInit {
     return this.optionss.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 }
+
+

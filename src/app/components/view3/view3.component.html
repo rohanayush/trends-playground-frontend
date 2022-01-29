@@ -47,9 +47,33 @@
   <div *ngIf="dict_bool">
     <ag-charts-angular style="position: relative;width: 1000px;height:400px;" [options]="options">
     </ag-charts-angular>
+    <ag-charts-angular style="position: relative;width: 1000px;height:400px;" [options]="options1">
+    </ag-charts-angular>
 
   </div>
+  <!-- <div *ngIf="mobile">
+    <div *ngFor="let o of dictt">
+   <div style="display: flex; border-bottom:3px;border-color:salmon ;border-width: {{o.count}}%;" class="box">
+     <span > {{o.country}}</span>
+     <span style="background:grey;" >{{o.count}}</span>
 </div>
+     </div>
+  </div> -->
+  <div *ngIf="mobile"> 
+    <h2 style="text-align:center">Countries with percentage of search done!</h2>
+    <div *ngFor="let o of dictt" style="display: flex;">
+       <div class="bars" style="width:{{o.count}}%;height:fit-content;color:white;margin:0.5rem;padding:0.3rem;">
+      {{o.country}}: {{o.count}}%  
+      </div>
+      <span style="" *ngIf="o.count < 25"> {{o.country}}: {{o.count}}%   </span>
+     </div>
+  </div>
+
+
+    <!-- </ag-charts-angular> -->
+
+  </div>
+<!-- </div> -->
 <!-- <div style="position:fixed;z-index:500;background:white;padding:1rem;top:30%;left:10%">
 <a href="https://www.dnaindia.com/india/report-national-youth-day-2021-yuva-diwas-swami-vivekananda-s-famous-speech-in-chicago-that-changed-world-s-outlook-towards-india-2867442"
     target="_blank">National Youth Day: Swami Vivekananda's famous speech in Chicago that changed world's outlook

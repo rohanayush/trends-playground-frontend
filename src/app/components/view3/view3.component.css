@@ -43,6 +43,33 @@
   }
   .row{
     position: relative;
-    width:80%;
+    width:100%;
     margin:0 auto;
+  }
+  .box{
+    width:auto;
+    /* box-shadow:11px 11px 0px 0px salmon; */
+    margin:2rem;
+    border:3px solid salmon;
+    border-radius:12px;
+  }
+  .bars{
+    /* background:linear-gradient(to right,orange,orange) 0 0/0 100% no-repeat,
+      rgba(255, 165, 0,0.1); */
+      background: linear-gradient(black,rgb(50, 206, 218));
+      margin:0 auto;
+    /* transition: background 1.3s ease; */
+    animation:bar 2.3s ease ;
+  }
+  .bars:hover{
+    background: black;
+  }
+  @keyframes bar {
+    0%{
+      width:10%;
+    
+    }
+    100%{
+      
+    }
   }

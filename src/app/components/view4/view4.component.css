@@ -17,6 +17,11 @@
     padding:1rem;
     /* overflow: auto; */
   }
+  .newsli{
+    width:100%;
+    /* background: rgb(77, 115, 219);
+    color:white */
+  }
   .mod_view{
     z-index: 1;
     position:fixed;
@@ -27,7 +32,23 @@
     padding:20px;
     border-radius:21px;
     cursor: pointer;
+    width: fit-content;
+  
 
+   animation: copy 0.8s ease;
+
+  }
+  *{
+    transition: all 0.5s ease;
+  
+  }
+  @keyframes copy {
+    0%{
+      top:60%;
+    }
+    100%{
+      top:80%;
+    }
   }
 .hawa-hawai{
   position:fixed;
@@ -46,6 +67,10 @@
   width:100%;
 
 
+}
+.news{
+  /* width: 90%; */
+  margin:0 auto;
 }
 .news-box{
   position: fixed;
@@ -74,13 +99,26 @@
   z-index:1001;
   background-color:white;
   box-shadow: 2px 2px 2px 2px silver;
-  width:80%;
+  width:95%;
   word-wrap: break-word;
   padding:2rem;
   overflow: auto;
   height: 60vh;
   animation:  box1 1.5s ease;
+  color:rgb(44, 44, 44);
   /* color:white; */
+}
+@media  (max-width:800px) {
+  .news{
+    height:50vh;
+    overflow: auto;
+  }
+}
+@media  (min-width:801px) and (max-width:1000px) {
+  .news{
+    height:60vh;
+    overflow: auto;
+  }
 }
 @keyframes box1 {
   0%{

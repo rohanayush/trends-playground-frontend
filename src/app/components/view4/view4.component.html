@@ -1,7 +1,7 @@
 <form class="animate__animated animate__bounce example-form">
   <mat-form-field class="example-full-width">
     <mat-label>Country</mat-label>
-    <input type="text" #query placeholder="Pick one" aria-label="Country" matInput [formControl]="myNation"
+    <input type="text" #query placeholder="Pick one" name="country" [ngModel]="val" aria-label="Country" matInput [formControl]="myNation"
       [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredNations | async" [value]="option">
@@ -13,9 +13,9 @@
 
 </form>
 <div class="loading" *ngIf="trends_res.length==0 && tr===true"> </div>
-<div *ngIf="trends_res.length>0" class="row" style="margin:3rem;">
-    <ul *ngFor="let o of trends_res ; let i =index" class="col-md-5 col-xs-12 col-sm-12  col-lg-4">
-      <li>{{ trends_res[(i)]}}
+<div *ngIf="trends_res.length>0" class="row news" style="margin:3rem;">
+    <ul *ngFor="let o of trends_res ; let i =index" class="col-md-5 col-xs-12 col-sm-12  col-lg-4 ">
+      <li class="newsli">{{ trends_res[(i)]}}
 
         <span style="margin-left:5px"
          (click)="copied(trends_res[(i)])" 
@@ -53,7 +53,7 @@
 
       </div>
   <button class="btn btn-warning" (click)="close()">Close air view</button> -->
-  <button class="btn btn-warning" (click)="close()">Close air view</button>
+  <button class="btn" style="background: blueviolet;" (click)="close()">Close air view</button>
   <div style="padding:10px;margin:20px;text-decoration: wavy;color:blueviolet;font-style:italic"> You are curious about
     - {{curious_string}}</div>
   <br>
@@ -65,7 +65,7 @@
       <a href={{i.url}} target="blank"> <button class="btn btn-info" style="margin-left: 10px;">Go to article by
           {{i.publisher}}</button></a>
     </div>
-    <button class="btn btn-danger" style="position:absolute;right:3%;top:1%" (click)="close()">CLose</button>
+    <button class="btn btn-danger" style="position:absolute;right:3%;top:1%" (click)="close()">Close</button>
 
   </div>
 </div>
