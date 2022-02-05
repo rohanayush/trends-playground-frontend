@@ -22,6 +22,9 @@
   <div class="col-md-3 col-md-3 col-sm-11 col-xs-12 col-lg-4 tab" [class.analysis]="analysis_view"
     (click)="analysisBool()">Analysis</div>
 </div>
+<div class="loading1" *ngIf="loader">
+
+  </div>
 <div *ngIf="trend_view">
   <app-view4 class="animate__animated animate__FadeIn"></app-view4>
 </div>
