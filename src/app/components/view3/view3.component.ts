@@ -18,7 +18,7 @@ export interface graphdata{
 })
 
 export class View3Component implements OnInit {
-
+  loader:boolean=false;
   public options: any;
   @HostListener('window:beforeunload',['$event'])
   handleClose($event: { returnValue: boolean; }){
@@ -157,10 +157,13 @@ options1:any;
     this.dict=[];
     this.dict_bool=false;
     this.mobile = false;
+        this.loader=true;
+    
     this.http.post<any[]>(this.url + "/data", dta).subscribe(
       (data: any) => {
         console.log(data);
         this.setFinal(data,dta);
+        this.loader=false;
 
         
       },
