@@ -22,9 +22,7 @@
   <div class="col-md-3 col-md-3 col-sm-11 col-xs-12 col-lg-4 tab" [class.analysis]="analysis_view"
     (click)="analysisBool()">Analysis</div>
 </div>
-<div class="loading1" *ngIf="loader">
 
-  </div>
 <div *ngIf="trend_view">
   <app-view4 class="animate__animated animate__FadeIn"></app-view4>
 </div>
@@ -32,6 +30,9 @@
 
 <!-- dynamic suggestion form input using angular material -->
 <div *ngIf="analysis_view" class="animate__animated animate__FadeIn">
+  <div class="loading1" *ngIf="loader">
+
+  </div>
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <mat-label>Know trend for</mat-label>
