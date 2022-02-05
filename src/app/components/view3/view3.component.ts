@@ -151,7 +151,7 @@ options1:any;
   }
   final_query:string="";
   dictt?:any[]=[]
-  dict_bool:boolean=false;
+  dict_bool:boolean=false; 
   show(dta: any) {
     console.log("supposed to be query data", dta)
     this.dict=[];
