@@ -73,3 +73,36 @@
       
     }
   }
+.loading{
+  position: relative;
+  /* left:45%; */
+  margin:0 auto;
+  margin-top:30px;
+  /* top:55%; */
+  width: 100px;
+  height:100px;
+  border-radius: 11px;
+  /* box-shadow: 2px 2px 2px 2px aqua; */
+  background-color: brown;
+  animation: load 2s ease 0s infinite alternate none;
+}
+@keyframes load {
+  10%{
+    background-color: aqua;
+    transform: scale3d(105%);
+  }
+  40%{
+    background-color: rgb(33, 116, 141);
+    transform: scale3d(105%);
+  } 60%{
+    background-color: rgb(112, 47, 138);
+    transform: scale3d(105%);
+  } 80%{
+    background-color: rgb(190, 29, 177);
+    transform: scale3d(105%);
+  } 100%{
+    background-color: aqua;
+    transform: scale3d(105%);
+  }
+  
+}
